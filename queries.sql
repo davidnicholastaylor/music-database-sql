@@ -1,4 +1,4 @@
-SELECT ArtistName, YearEstablished
+/* SELECT ArtistName, YearEstablished
 FROM Artist
 WHERE YearEstablished > 1970
 AND YearEstablished < 2000
@@ -43,3 +43,32 @@ WHERE ArtistId = 29;
 UPDATE Artist 
 SET YearEstablished = 2008
 WHERE ArtistId = 31;
+*/
+
+SELECT * FROM GENRE;
+
+INSERT INTO Artist 
+(ArtistName, YearEstablished)
+values
+("The Dead Weather", 2008)
+;
+
+INSERT INTO Album
+(Title, ArtistId, ReleaseDate, AlbumLength, Label)
+values("Sea of Cowards", 31, 2010, 12, "Third Man Records")
+;
+
+SELECT * FROM Album;
+
+SELECT 
+a.Title,
+ar.ArtistName
+FROM Album a
+JOIN Artist ar ON a.ArtistId = ar.ArtistId
+;
+
+SELECT 
+al.Title
+s.Title
+FROM Song s
+JOIN Album al ON s.AlbumId = al.AlbumId;
